@@ -1,0 +1,22 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+.loading{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media only screen and (max-width:1000px) {
+    .grid-container{
+        grid-template-columns: auto auto;
+    }
+}
+@media only screen and (max-width:666px) {
+    .grid-container{
+        grid-template-columns: auto;
+    }
+}

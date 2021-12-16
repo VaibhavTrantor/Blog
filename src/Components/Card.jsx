@@ -5,18 +5,18 @@ const Card = ({blog}) => {
         <div className="main">
         <div className='card-container'>
             <div className="image-container">
-                <img src="https://images.unsplash.com/photo-1638913662295-9630035ef770?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" />
+                <img src={blog.image} alt="" />
             </div>
             <div className="card-content">
                 <div className="blog-post-date">
                     <span>{blog.Day}</span>
-                    <span>October 27 2019</span>
+                    <span>{blog.Date}</span>
                 </div>
                 <div className="card-title">
-                <h1>Shark Sighting</h1>
+                <h1>{blog.title.slice(0,15)}...</h1>
                 </div>
                 <div className="card-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure laudantium magnam nulla animi ratione inventore officiis doloribus! </p>
+                <p>{blog.body.slice(0,60)}...</p>
                 </div>
             </div>
                 <div className="btncard">
