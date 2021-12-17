@@ -1,0 +1,25 @@
+.pagenotfound{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pagenotfoundbutton{
+    margin-bottom: 150px;
+    color: black;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 8px 13px;
+    border-radius: 8px;
+    background-color: lightgrey;
+    transition: .5s ease-in;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+}
+.pagenotfoundbutton:hover{
+    background-color: red;
+    color: white;
+}

@@ -23,3 +23,8 @@
         grid-template-columns: auto;
     }
 }
+@media only screen and (max-width:303px) {
+    .grid-container{
+        margin-top: -120px;
+    }
+}

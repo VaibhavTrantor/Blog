@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Card from '../Components/Card'
 import Footer from '../Components/Footer'
+import Landing from '../Components/Landing'
 import Navbar from '../Components/Navbar'
 import Pagination from '../Components/Pagination'
 import Login from './Login'
@@ -44,7 +45,8 @@ const Welcome = () => {
     if(!loading && isLoggedin || localStorage.getItem("token") !==null){return (
         <div>
            <Navbar setisLoggedin={setisLoggedin}/>
-           <div className="grid-container">
+           <Landing/>
+           <div className="grid-container" id='alltheblogs'>
            {currentblogs.map((blog)=>(
                <div className='grid-item'>
                    <Card key={blog.id} blog={blog}/>
