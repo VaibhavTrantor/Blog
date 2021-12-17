@@ -3,46 +3,46 @@ import { useNavigate } from 'react-router-dom'
 import "./Login.css"
 
 const Login = (props) => {
-    const [value, setValue] = useState({username:"",password:""})
-    const handlechange = (event)=>{
-        setValue({...value,[event.target.name]:event.target.value})
+    const [value, setValue] = useState({ username: "", password: "" })
+    const handlechange = (event) => {
+        setValue({ ...value, [event.target.name]: event.target.value })
     }
     const navigate = useNavigate()
-    const handlelogin = (e)=>{
+    const handlelogin = (e) => {
         e.preventDefault();
-        if (value.username==="demo") {
-            if (value.password==="demo") {
-                localStorage.setItem("token",value.username)
+        if (value.username === "demo") {
+            if (value.password === "demo") {
+                localStorage.setItem("token", value.username)
                 navigate("/")
                 props.setisLoggedin(true)
-            }else{
-                document.getElementById("error").style.display="inline"
-               
+            } else {
+                document.getElementById("error").style.display = "inline"
+
             }
-        }else{
-            document.getElementById("error").style.display="inline"
-            
+        } else {
+            document.getElementById("error").style.display = "inline"
+
         }
     }
     React.useEffect(() => {
         const inputs = document.querySelectorAll('.input');
-    function focusFunc() {
-        console.log("i am runnig")
-        let parent = this.parentNode.parentNode;
-        parent.classList.add('focus')
-    }
-    function blurFunc() {
-        let parent = this.parentNode.parentNode;
-        if(this.value===""){
-            parent.classList.remove('focus')
+        function focusFunc() {
+            console.log("i am runnig")
+            let parent = this.parentNode.parentNode;
+            parent.classList.add('focus')
         }
-    }
-    inputs.forEach(input=>{
-        input.addEventListener('focus',focusFunc)
-        input.addEventListener('blur',blurFunc)
-    })
+        function blurFunc() {
+            let parent = this.parentNode.parentNode;
+            if (this.value === "") {
+                parent.classList.remove('focus')
+            }
+        }
+        inputs.forEach(input => {
+            input.addEventListener('focus', focusFunc)
+            input.addEventListener('blur', blurFunc)
+        })
     }, [])
-    
+
     return (
         <div className='logincontainer'>
             <div className="container">
@@ -54,7 +54,7 @@ const Login = (props) => {
                         <img className='avatar' src="./images/pic1.svg" alt="profile" />
                         <h2>Welcome</h2>
                         <div className='error1'>
-                                <strong className='error'  id='error'>Invalid Credentials !</strong>
+                            <strong className='error' id='error'>Invalid Credentials !</strong>
                         </div>
 
                         <div className="input-div one">

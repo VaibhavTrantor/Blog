@@ -14,25 +14,25 @@ const Welcome = () => {
     const [currentpage, setCurrentpage] = useState(1)
     const [blogperpage] = useState(6)
     const [isLoggedin, setisLoggedin] = useState(false)
-    const fetchblogs = async()=>{
+    const fetchblogs = async () => {
         setLoading(true)
-        const data= await axios.get("http://demo3741010.mockable.io/blogs")
+        const data = await axios.get("http://demo3741010.mockable.io/blogs")
         setblogs(data.data)
         setLoading(false)
     }
     useEffect(() => {
         fetchblogs()
-        if (localStorage.getItem("token")!==null) {
+        if (localStorage.getItem("token") !== null) {
             setisLoggedin(true)
         }
     }, [])
     // Get current Blogs
     const indexofLastblog = currentpage * blogperpage;
     const indexofFirstblog = indexofLastblog - blogperpage;
-    const currentblogs = blogs.slice(indexofFirstblog,indexofLastblog);
+    const currentblogs = blogs.slice(indexofFirstblog, indexofLastblog);
 
     // Change Page
-    const paginate = (pagenumber)=>{
+    const paginate = (pagenumber) => {
         setCurrentpage(pagenumber)
     }
     if (loading) {
@@ -42,25 +42,28 @@ const Welcome = () => {
             </div>
         )
     }
-    if(!loading && isLoggedin || localStorage.getItem("token") !==null){return (
-        <div>
-           <Navbar setisLoggedin={setisLoggedin}/>
-           <Landing/>
-           <div className="grid-container" id='alltheblogs'>
-           {currentblogs.map((blog)=>(
-               <div className='grid-item'>
-                   <Card key={blog.id} blog={blog}/>
-               </div>
-                   ))}
-           </div>
-                   <Pagination blogperpage={blogperpage} totalblogs={blogs.length} paginate={paginate}/>
-                   <Footer/>
-        </div>
-    )}
-    if (!isLoggedin && localStorage.getItem("token")===null) {return(
-        <Login setisLoggedin={setisLoggedin}/>
-    )
-        
+    if (!loading && isLoggedin || localStorage.getItem("token") !== null) {
+        return (
+            <div>
+                <Navbar setisLoggedin={setisLoggedin} />
+                <Landing />
+                <div className="grid-container" id='alltheblogs'>
+                    {currentblogs.map((blog) => (
+                        <div className='grid-item'>
+                            <Card key={blog.id} blog={blog} />
+                        </div>
+                    ))}
+                </div>
+                <Pagination blogperpage={blogperpage} totalblogs={blogs.length} paginate={paginate} />
+                <Footer />
+            </div>
+        )
+    }
+    if (!isLoggedin && localStorage.getItem("token") === null) {
+        return (
+            <Login setisLoggedin={setisLoggedin} />
+        )
+
     }
 }
 

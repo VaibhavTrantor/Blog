@@ -45,18 +45,18 @@ const BlogDispaly = () => {
 
                     </div>
                 </div>
-                        <div className="moreinfo">
-                            <div className="dateday">
-                                <span>{singleblog[0].Day}</span>
-                                <span>{singleblog[0].Date}</span>
-                            </div>
-                            <div className="description">{singleblog[0].body}</div>
-                        </div>
+                <div className="moreinfo">
+                    <div className="dateday">
+                        <span>{singleblog[0].Day}</span>
+                        <span>{singleblog[0].Date}</span>
+                    </div>
+                    <div className="description">{singleblog[0].body}</div>
+                </div>
             </div>
             <div className='funimage'>
-            <img src="../images/dog.svg" alt="" />
+                <img src="../images/dog.svg" alt="" />
             </div>
-            <Footer/>
+            <Footer />
         </>
     )
 }
