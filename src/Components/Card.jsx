@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import "./Card.css"
 const Card = ({blog}) => {
+    const navigate = useNavigate()
     return (
         <div className="main">
         <div className='card-container'>
@@ -20,7 +22,7 @@ const Card = ({blog}) => {
                 </div>
             </div>
                 <div className="btncard">
-                    <button>View More</button>
+                    <button onClick={()=>navigate(`/blogdisplay/${blog.id}`)}>View More</button>
                 </div>
             </div>
             </div>

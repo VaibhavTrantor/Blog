@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Card from '../Components/Card'
+import Footer from '../Components/Footer'
 import Navbar from '../Components/Navbar'
 import Pagination from '../Components/Pagination'
 import Login from './Login'
@@ -51,6 +52,7 @@ const Welcome = () => {
                    ))}
            </div>
                    <Pagination blogperpage={blogperpage} totalblogs={blogs.length} paginate={paginate}/>
+                   <Footer/>
         </div>
     )}
     if (!isLoggedin && localStorage.getItem("token")===null) {return(
