@@ -1,5 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { Loader } from '../AllImages'
+import { blogapi } from '../Api'
 import Card from '../Components/Card'
 import Footer from '../Components/Footer'
 import Landing from '../Components/Landing'
@@ -16,7 +18,7 @@ const Welcome = () => {
     const [isLoggedin, setisLoggedin] = useState(false)
     const fetchblogs = async () => {
         setLoading(true)
-        const data = await axios.get("http://demo3741010.mockable.io/blogs")
+        const data = await axios.get(blogapi)
         setblogs(data.data)
         setLoading(false)
     }
@@ -38,7 +40,7 @@ const Welcome = () => {
     if (loading) {
         return (
             <div className='loading'>
-                <img src="https://thumbs.gfycat.com/DearWellinformedDalmatian-size_restricted.gif" alt="" />
+                <img src={Loader} alt="" />
             </div>
         )
     }

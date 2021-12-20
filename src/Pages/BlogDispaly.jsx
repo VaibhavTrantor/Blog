@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom'
 import './BlogDisplay.css'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
+import { BlogDisplayImage } from '../AllImages'
+import { blogapi } from '../Api'
 
 const BlogDispaly = () => {
     const [singleblog, setSingleblog] = useState([])
@@ -12,7 +14,7 @@ const BlogDispaly = () => {
     const { id } = useParams()
     const fetchblogs = async () => {
         setLoading(true)
-        const data = await axios.get("http://demo3741010.mockable.io/blogs")
+        const data = await axios.get(blogapi)
         const res = data.data
         setSingleblog(res.filter((blog) => blog.id == id))
         setLoading(false)
@@ -23,7 +25,6 @@ const BlogDispaly = () => {
             setisLoggedin(true)
         }
     }, [])
-    console.log("single blog is", singleblog, id)
     if (loading) {
         return (
             <div className='loading'>
@@ -42,6 +43,7 @@ const BlogDispaly = () => {
                     </div>
                     <div className="infocontainer">
                         <h1 className="displaytitle">{singleblog[0].title}</h1>
+                        <h2 className="displaytitle2">~ Vaibhav singh</h2>
 
                     </div>
                 </div>
@@ -54,7 +56,7 @@ const BlogDispaly = () => {
                 </div>
             </div>
             <div className='funimage'>
-                <img src="../images/dog.svg" alt="" />
+                <img src={BlogDisplayImage} alt="" />
             </div>
             <Footer />
         </>

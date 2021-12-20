@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { LoginProfile, LoginWallpaper } from '../AllImages'
 import "./Login.css"
 
 const Login = (props) => {
@@ -47,11 +48,11 @@ const Login = (props) => {
         <div className='logincontainer'>
             <div className="container">
                 <div className="img">
-                    <img src="./images/pic2.svg" alt="" />
+                    <img src={LoginWallpaper} alt="" />
                 </div>
                 <div className="login-container">
                     <form>
-                        <img className='avatar' src="./images/pic1.svg" alt="profile" />
+                        <img className='avatar' src={LoginProfile} alt="profile" />
                         <h2>Welcome</h2>
                         <div className='error1'>
                             <strong className='error' id='error'>Invalid Credentials !</strong>

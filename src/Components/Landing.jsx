@@ -1,10 +1,11 @@
 import React from 'react'
 import './Landing.css'
+import {Landingimage} from '../AllImages'
 const Landing = () => {
     return (
         <div className='main-container-landing'>
             <div className='landing-image'>
-                <img src="../images/welcome.svg" alt="" />
+                <img src={Landingimage} alt="" />
             </div>
             <div className="landing-title">
                 <h1>Welcome, <span>{localStorage.getItem("token")}</span></h1>

@@ -19,6 +19,7 @@
 .imagecontainer img{
     width: 100%;
     height: 60vh;
+    box-shadow: 0px 0px 15px -5px;
     object-fit: cover;
 }
 .infocontainer{
@@ -26,18 +27,27 @@
     padding: 0px 50px;
 }
 .displaytitle{
+}
+.displaytitle2{
     font-weight: 600;
     font-family: 'Baloo Bhaijaan 2', cursive;
+    float: right;
+    margin-top: 10px;
+    color: gray;
+
 }
 .dateday{
     display: flex;
     justify-content: space-between;
     font-weight: 400;
+    font-size: 17px;
     font-family: 'Baloo Bhaijaan 2', cursive;
     color: gray;
 }
 .description{
     margin: 20px 0px;
+    font-size: 18px;
+    font-weight: 500;
 }
 .moreinfo{
     padding: 0px 50px;
@@ -60,6 +70,9 @@
     }
     .display-container{
         margin-top: 1vh;
+    }
+    .displaytitle2{
+        font-size: 16px;
     }
 }
 @media only screen and (max-width:678px) {
