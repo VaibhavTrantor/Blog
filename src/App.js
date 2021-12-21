@@ -4,11 +4,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Welcome from './Pages/Welcome';
 import BlogDispaly from './Pages/BlogDispaly';
 import PageNotFound from './Pages/PageNotFound';
+import BlogState from './BlogContext/BlogState';
+
 
 
 function App() {
   return (
     <div className="App">
+      <BlogState>
       <Router>
 
         <Routes>
@@ -17,6 +20,7 @@ function App() {
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </Router>
+      </BlogState>
     </div>
   );
 }

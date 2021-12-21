@@ -73,6 +73,7 @@ form h2{
 .input-div.focus::after,.input-div.focus::before{
     width: 50%;
 }
+
 .input-div.one{
     margin-top: 0;
 }
@@ -141,8 +142,6 @@ form h2{
 }
 .error{
     color: red;
-    display: none;
-    
 }
 @media only screen and (max-width:1050px) {
     .container{

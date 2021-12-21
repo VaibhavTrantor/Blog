@@ -1,50 +1,31 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useContext, useRef, useState } from 'react'
 import { LoginProfile, LoginWallpaper } from '../AllImages'
+import BlogContext from '../BlogContext/BlogContext'
 import "./Login.css"
 
 const Login = (props) => {
+    const blogs = useContext(BlogContext)
+    const { login, error } = blogs
+    const [classes, setclasses] = useState(false)
     const [value, setValue] = useState({ username: "", password: "" })
     const handlechange = (event) => {
+        setclasses(true)
         setValue({ ...value, [event.target.name]: event.target.value })
     }
-    const navigate = useNavigate()
-    const handlelogin = (e) => {
-        e.preventDefault();
-        if (value.username === "demo") {
-            if (value.password === "demo") {
-                localStorage.setItem("token", value.username)
-                navigate("/")
-                props.setisLoggedin(true)
-            } else {
-                document.getElementById("error").style.display = "inline"
-
-            }
-        } else {
-            document.getElementById("error").style.display = "inline"
-
+    const handlelogin = () => {
+        login(value.username, value.password)
+    }
+    const ref = useRef()
+    const userref = useRef()
+    const passref = useRef()
+    const handleclick = ()=>{
+        if (ref.current && userref.current.value === "" && passref.current.value ==="") {
+            setclasses(false)
         }
     }
-    React.useEffect(() => {
-        const inputs = document.querySelectorAll('.input');
-        function focusFunc() {
-            let parent = this.parentNode.parentNode;
-            parent.classList.add('focus')
-        }
-        function blurFunc() {
-            let parent = this.parentNode.parentNode;
-            if (this.value === "") {
-                parent.classList.remove('focus')
-            }
-        }
-        inputs.forEach(input => {
-            input.addEventListener('focus', focusFunc)
-            input.addEventListener('blur', blurFunc)
-        })
-    }, [])
 
     return (
-        <div className='logincontainer'>
+        <div ref={ref} onClick={handleclick} className='logincontainer'>
             <div className="container">
                 <div className="img">
                     <img src={LoginWallpaper} alt="" />
@@ -53,29 +34,29 @@ const Login = (props) => {
                     <form>
                         <img className='avatar' src={LoginProfile} alt="profile" />
                         <h2>Welcome</h2>
-                        <div className='error1'>
+                        {error && <div className='error1'>
                             <strong className='error' id='error'>Invalid Credentials !</strong>
-                        </div>
+                        </div>}
 
-                        <div className="input-div one">
+                        <div className={`input-div one ${classes && "focus"}`} >
                             <div className="i">
                                 <i className='fas fa-user'></i>
                             </div>
                             <div>
                                 <h5>Username</h5>
-                                <input name='username' value={value.username} onChange={handlechange} type="text" className='input' />
+                                <input ref={userref} name='username' value={value.username} onChange={handlechange} type="text" className={`input ${classes && "focus"}`} />
                             </div>
                         </div>
-                        <div className="input-div two">
+                        <div className={`input-div two ${classes && "focus"}`}>
                             <div className="i">
                                 <i className='fas fa-lock'></i>
                             </div>
                             <div>
                                 <h5>Password</h5>
-                                <input name='password' value={value.password} onChange={handlechange} type="password" className='input' />
+                                <input ref={passref} name='password' value={value.password} onChange={handlechange} type="password" className={`input ${classes && "focus"}`} />
                             </div>
                         </div>
-                        <input type="submit" onClick={handlelogin} className='btn' value="login" />
+                        <input type='button' onClick={handlelogin} className='btn' value="login" />
                     </form>
                 </div>
             </div>

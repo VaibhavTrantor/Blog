@@ -1,31 +1,20 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useContext, useEffect } from 'react'
 import './BlogDisplay.css'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import { BlogDisplayImage } from '../AllImages'
-import { blogapi } from '../Api'
+import BlogContext from '../BlogContext/BlogContext'
+import { useParams } from 'react-router-dom'
 
 const BlogDispaly = () => {
-    const [singleblog, setSingleblog] = useState([])
-    const [loading, setLoading] = useState(true)
-    const [isLoggedin, setisLoggedin] = useState(false)
+    const blogs = useContext(BlogContext)
+    const {getsingleblogs,Loading,singleblog} = blogs
     const { id } = useParams()
-    const fetchblogs = async () => {
-        setLoading(true)
-        const data = await axios.get(blogapi)
-        const res = data.data
-        setSingleblog(res.filter((blog) => blog.id == id))
-        setLoading(false)
-    }
     useEffect(() => {
-        fetchblogs()
-        if (localStorage.getItem("token") !== null) {
-            setisLoggedin(true)
-        }
+        getsingleblogs(id)
     }, [])
-    if (loading) {
+    console.log("singleblog",singleblog)
+    if (Loading || singleblog===undefined) {
         return (
             <div className='loading'>
                 <img src="https://thumbs.gfycat.com/DearWellinformedDalmatian-size_restricted.gif" alt="" />
@@ -33,7 +22,7 @@ const BlogDispaly = () => {
 
         )
     }
-    if (!loading) return (
+    if (!Loading){ return (
         <>
             <Navbar />
             <div className='display-container'>
@@ -61,6 +50,7 @@ const BlogDispaly = () => {
             <Footer />
         </>
     )
+    }
 }
 
 export default BlogDispaly

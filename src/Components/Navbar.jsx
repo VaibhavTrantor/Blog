@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Logo } from '../AllImages'
+import BlogContext from '../BlogContext/BlogContext'
 import "./Navbar.css"
-const Navbar = (props) => {
+const Navbar = () => {
+    const blogs = useContext(BlogContext)
     const navigate = useNavigate()
+    const {logout} = blogs
     const handlelogout = () => {
-        localStorage.removeItem("token")
+        logout()
         navigate("/")
-        props.setisLoggedin(false)
+        
     }
     return (
         <div className='Navcontainer'>

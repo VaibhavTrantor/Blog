@@ -4,7 +4,7 @@
     padding: 10px;    
 }
 .grid-item{
-    margin-bottom: -100px;
+    margin: -10px -70px -100px -70px;
 }
 .loading{
     height: 100vh;
