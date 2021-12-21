@@ -1,0 +1,35 @@
+.cardpagecontainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 40px;
+}
+.cardpage{
+    padding: 5px;
+    width: 150px;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    border-radius: 5px;
+    border: none;
+    border-bottom:2px solid black ;
+    outline: none;
+}
+
+.blogdetails{
+    text-align: center;
+    color: gray;
+}
+.searchbutton{
+    padding: 10px;
+    margin-right: 10px;
+    background-color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;  
+    transition: .3s; 
+}
+.searchbutton:hover{
+    color: red;
+}
+.searchbutton{
+    font-size: 20px;
+}

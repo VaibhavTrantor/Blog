@@ -28,7 +28,6 @@ const Login = (props) => {
     React.useEffect(() => {
         const inputs = document.querySelectorAll('.input');
         function focusFunc() {
-            console.log("i am runnig")
             let parent = this.parentNode.parentNode;
             parent.classList.add('focus')
         }
