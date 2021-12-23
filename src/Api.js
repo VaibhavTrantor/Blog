@@ -1,1 +1,0 @@
-export const blogapi = "http://demo3741010.mockable.io/blogs"
