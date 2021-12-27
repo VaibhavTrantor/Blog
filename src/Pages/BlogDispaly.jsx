@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import './BlogDisplay.css'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
-import { BlogDisplayImage } from '../AllImages'
+import { BlogDisplayImage, Loader } from '../AllImages'
 import BlogContext from '../BlogContext/BlogContext'
 import { useParams } from 'react-router-dom'
 
@@ -13,11 +13,10 @@ const BlogDispaly = () => {
     useEffect(() => {
         getsingleblogs(id)
     }, [])
-    console.log("singleblog",singleblog)
     if (Loading || singleblog===undefined) {
         return (
             <div className='loading'>
-                <img src="https://thumbs.gfycat.com/DearWellinformedDalmatian-size_restricted.gif" alt="" />
+                <img src={Loader} alt="" />
             </div>
 
         )

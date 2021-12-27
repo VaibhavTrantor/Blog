@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState } from "react";
 import BlogContext from "./BlogContext";
 const BlogState = (props) => {
-    const api = "http://demo3741010.mockable.io/blogs"
     const [Blogs, setBlogs] = useState([])
     const [error, setError] = useState(false)
     const [isLoggedin, setIsLoggedin] = useState(false)
@@ -13,17 +12,18 @@ const BlogState = (props) => {
 
     const getblogs = async () => {
         setLoading(true)
-        const response = await axios.get(api)
+        const response = await axios.get("https://demo3741010.mockable.io/blogs")
         const res = response.data
-        setBlogs(res)
+        console.log(res)
         setLoading(false)
+        setBlogs(res)
         if (localStorage.getItem('token') !== null) {
             setIsLoggedin(true)
         }
     }
     const getsingleblogs = async (id) => {
         setLoading(true)
-        const response = await axios.get(api)
+        const response = await axios.get("https://demo3741010.mockable.io/blogs")
         const res = response.data
         console.log("context")
         setSingleblog((res).filter((blog) => blog.id == id))
