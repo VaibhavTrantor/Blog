@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { PagenotFound } from '../AllImages'
-import './Pagenotfound.css'
+import './Pagenotfound.scss'
 
 const PageNotFound = () => {
     const navigate = useNavigate()

@@ -1,10 +1,9 @@
+@import '../style/mixin';
+@import '../style/var';
 .pagenotfound{
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include genralflex(column,center);
 }
 .pagenotfoundbutton{
     margin-bottom: 150px;
@@ -18,8 +17,8 @@
     margin-top: 20px;
     border: none;
     cursor: pointer;
-}
-.pagenotfoundbutton:hover{
-    background-color: red;
-    color: white;
+    &:hover{
+        background-color: red;
+        color: white;
+    }
 }

@@ -1,13 +1,13 @@
+@import '../style/var';
+@import '../style/mixin';
 .cardpagecontainer{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include genralflex(row,space-evenly);
     margin-top: 40px;
 }
 .cardpage{
     padding: 5px;
     width: 150px;
-    font-family: 'Baloo Bhaijaan 2', cursive;
+    font-family: $fontfamily;
     border-radius: 5px;
     border: none;
     border-bottom:2px solid black ;
@@ -26,10 +26,8 @@
     outline: none;
     cursor: pointer;  
     transition: .3s; 
-}
-.searchbutton:hover{
-    color: red;
-}
-.searchbutton{
     font-size: 20px;
+    &:hover{
+        color: red;
+    }
 }

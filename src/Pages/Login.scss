@@ -1,10 +1,12 @@
+@import '../style/mixin';
+@import '../style/var';
 *{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
 }
 .logincontainer{
-    font-family: 'Poppins', sans-serif;
+    font-family: $popfont;
 }
 .container{
     width: 100vw;
@@ -15,17 +17,13 @@
     padding: 0 2rem;
 }
 .img{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-.img img{
-    width: 500px;
+    @include genralflex(row,flex-end);
+    & img{
+        width: 500px;
+    }
 }
 .login-container{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    @include genralflex(row,flex-start);
     text-align: center;
 }
 form{
@@ -84,23 +82,23 @@ form h2{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.i i{
-    color: #d9d9d9;
-    transition: .3s;
+    & i{
+        color: #d9d9d9;
+        transition: .3s;
+    }
 }
 .input-div > div{
     position: relative;
     height: 45px;
-}
-.input-div > div h5{
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #999;
-    font-size: 18px;
-    transition: .3s;
+    & h5{
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #999;
+        font-size: 18px;
+        transition: .3s;
+    }
 }
 .input{
     position: absolute;
@@ -113,7 +111,7 @@ form h2{
     background: none;
     padding: 0.5rem 0.7rem;
     color: #555;
-    font-family: 'Poppins', sans-serif;
+    font-family: $popfont;
 }
 .btn{
     display: block;
@@ -129,13 +127,12 @@ form h2{
     cursor: pointer;
     color: #fff;
     text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
+    font-family: $popfont;
     background-size: 200%;
     transition: .5s;
-
-}
-.btn:hover{
-    background-position: right;
+    &:hover{
+        background-position: right;
+    }
 }
 .error1{
     margin-bottom: 5px;

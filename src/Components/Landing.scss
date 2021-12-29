@@ -1,3 +1,5 @@
+@import '../style/var';
+@import '../style/mixin';
 .main-container-landing{
     display: flex;
     margin-top: 15vh;
@@ -5,35 +7,29 @@
 }
 .landing-image{
     flex:3;
-}
-.landing-image img{
-    width: 100%;
-    height: 70vh;
-
+    & img{
+        width: 100%;
+        height: 70vh;
+    }
 }
 .landing-title{
     flex:2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.landing-title h1{
-    font-size: 52px;
-    font-weight: 900;
-    font-family: 'Baloo Bhaijaan 2', cursive;
-    
-}
-.landing-title h2{
-    font-size: 42px;
-    font-weight: 700;
-    font-family: 'Baloo Bhaijaan 2', cursive;
-    
-}
-.landing-title span{
-    color: red;
-    text-transform: uppercase;
-    font-family: 'Baloo Bhaijaan 2', cursive;
+    @include genralflex(column,center);
+    & h1{
+        font-size: 52px;
+        font-weight: 900;
+        font-family: $fontfamily;
+        & span{
+            color: red;
+            text-transform: uppercase;
+            font-family: $fontfamily;
+        }
+    }
+    & h2{
+        font-size: 42px;
+        font-weight: 700;
+        font-family: $fontfamily;
+    }
 }
 .dot{
     color: red;
@@ -48,15 +44,14 @@
     background-color: lightgrey;
     transition: .5s ease-in;
     margin-top: 20px;
+    &:hover{
+        background-color: red;
+        color: white;
+    }
 }
 #compass{
     padding-right: 5px;
     font-size: 16px;
-}
-.landing-button:hover{
-    background-color: red;
-    color: white;
-    
 }
 @media only screen and (max-width:1000px) {
     .landing-image{
@@ -70,13 +65,10 @@
     .landing-title h2{
         font-size: 32px;
     }
-
 }
 @media only screen and (max-width:305px) {
     .landing-title{
         display: none;
     }
-    
-
 }
 

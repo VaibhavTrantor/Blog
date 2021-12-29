@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState } from 'react'
 import { LoginProfile, LoginWallpaper } from '../AllImages'
 import BlogContext from '../BlogContext/BlogContext'
-import "./Login.css"
+import "./Login.scss"
 
 const Login = (props) => {
     const blogs = useContext(BlogContext)

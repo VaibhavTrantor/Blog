@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import './BlogDisplay.css'
+import './BlogDisplay.scss'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import { BlogDisplayImage, Loader } from '../AllImages'

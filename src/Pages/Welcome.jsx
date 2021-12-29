@@ -8,7 +8,7 @@ import Navbar from '../Components/Navbar'
 import Pagedetails from '../Components/Pagedetails'
 import Pagination from '../Components/Pagination'
 import Login from './Login'
-import "./Welcome.css"
+import "./Welcome.scss"
 
 const Welcome = () => {
     const blogs = useContext(BlogContext)

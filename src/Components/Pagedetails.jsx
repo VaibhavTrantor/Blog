@@ -1,5 +1,5 @@
 import React from 'react'
-import './Pagedetails.css'
+import './Pagedetails.scss'
 const Pagedetails = ({ handlecardperpage, fetchcard, currentpage, blogperpage, blogs, cardperpage }) => {
     return (
         <div>

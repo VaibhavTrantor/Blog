@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Logo } from '../AllImages'
 import BlogContext from '../BlogContext/BlogContext'
-import "./Navbar.css"
+import "./Navbar.scss"
 const Navbar = () => {
     const blogs = useContext(BlogContext)
     const navigate = useNavigate()

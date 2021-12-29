@@ -1,0 +1,10 @@
+@mixin flexprops ($justify) {
+    display: flex;
+    justify-content: $justify;
+}
+@mixin genralflex($direction,$justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-direction: $direction;
+}
