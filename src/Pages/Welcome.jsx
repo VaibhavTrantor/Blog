@@ -7,6 +7,7 @@ import Landing from '../Components/Landing'
 import Navbar from '../Components/Navbar'
 import Pagedetails from '../Components/Pagedetails'
 import Pagination from '../Components/Pagination'
+import Slider from '../Components/Slider'
 import Login from './Login'
 import "./Welcome.scss"
 
@@ -52,7 +53,8 @@ const Welcome = () => {
         return (
             <div>
                 <Navbar/>
-                <Landing />
+                <Slider/>
+                {/* <Landing /> */}
                 <div className="grid-container" id='alltheblogs'>
                     {currentblogs.map((blog) => (
                         <div className='grid-item' key={blog.id} >

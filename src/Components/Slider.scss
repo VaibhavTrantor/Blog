@@ -1,0 +1,106 @@
+@import '../style/mixin';
+@import '../style/var';
+.container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.btn-slide{
+    font-size: 2rem;
+    padding: 10px;
+    background-color: lightskyblue;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    @include genralflex(row,center);
+    cursor: pointer;
+}
+.prev {
+    top: 50%;
+    left: 20px;
+}
+.next{
+    top: 50%;
+    right: 20px;
+}
+.wrapperslider{
+    height: 100%;
+    display: flex;
+    transition: all 1.5s ease;
+}
+.slide{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & img{
+        flex:1;
+        width: 60%;
+        height: 60%;
+        padding-left: 90px;
+    }
+}
+.infocontainerslider{
+    flex:1;
+    padding: 50px;
+    @include genralflex(column,center);
+}
+.title{
+    font-size: 60px;
+    font-family: $fontfamily;
+    color: black;
+}
+.description{
+    margin: 30px 0px;
+    font-family: $fontfamily;
+    font-size: 30px;
+    color: black;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.sliderbtn{
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    background-color: red;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: .5s ease-in;
+    border:none;
+    border-bottom: 2px solid black;
+    box-shadow: 0px 0px 15px -5px;
+    &:hover{
+        color: white;
+        background-color: rgb(214, 43, 43);
+        transform: scale(1.1);
+    }
+}
+
+.container-dots{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.dot{
+    width:20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #f1f1f1;
+    margin: 0 5px;
+    background: lightgrey;
+    cursor: pointer;
+}
+.dot.active{
+    background: rgb(32,32,32);
+}
