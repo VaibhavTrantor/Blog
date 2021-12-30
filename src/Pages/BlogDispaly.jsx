@@ -2,9 +2,10 @@ import React, { useContext, useEffect } from 'react'
 import './BlogDisplay.scss'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
-import { BlogDisplayImage, Loader } from '../AllImages'
+import {  Loader } from '../AllImages'
 import BlogContext from '../BlogContext/BlogContext'
 import { useParams } from 'react-router-dom'
+import NewsLetter from '../Components/NewsLetter';
 
 const BlogDispaly = () => {
     const blogs = useContext(BlogContext)
@@ -43,9 +44,7 @@ const BlogDispaly = () => {
                     <div className="description">{singleblog[0].body}</div>
                 </div>
             </div>
-            <div className='funimage'>
-                <img src={BlogDisplayImage} alt="" />
-            </div>
+            <NewsLetter/>
             <Footer />
         </>
     )

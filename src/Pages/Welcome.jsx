@@ -5,6 +5,7 @@ import Card from '../Components/Card'
 import Footer from '../Components/Footer'
 import Landing from '../Components/Landing'
 import Navbar from '../Components/Navbar'
+import NewsLetter from '../Components/NewsLetter'
 import Pagedetails from '../Components/Pagedetails'
 import Pagination from '../Components/Pagination'
 import Slider from '../Components/Slider'
@@ -62,8 +63,10 @@ const Welcome = () => {
                         </div>
                     ))}
                 </div>
+             
                 <Pagedetails handlecardperpage={handlecardperpage} fetchcard={fetchcard} currentpage={currentpage} blogperpage={blogperpage} blogs={Blogs} cardperpage={cardperpage} />
                 <Pagination blogperpage={blogperpage} totalblogs={Blogs.length} paginate={paginate} />
+               <NewsLetter/>
                 <Footer />
             </div>
         )

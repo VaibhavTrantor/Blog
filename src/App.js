@@ -10,7 +10,7 @@ import BlogState from './BlogContext/BlogState';
 
 function App() {
   return (
-    <div className="App" style={{overflow:"hidden"}}>
+    <div className="App" style={{overflow:"hidden",background:"whitesmoke"}}>
       <BlogState>
       <Router>
 

@@ -3,6 +3,7 @@
 .pagenotfound{
     width: 100vw;
     height: 100vh;
+    background-color: white;
     @include genralflex(column,center);
 }
 .pagenotfoundbutton{

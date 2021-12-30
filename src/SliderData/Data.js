@@ -8,7 +8,7 @@ export const sliderItems = [
         bg1:"eec0c6",
         hue:0,
         bg2:"7ee8fa",
-        percen:74
+        percen:60
     },
     
     
@@ -18,10 +18,10 @@ export const sliderItems = [
         title:"Lifestyle Blog",
         desc: `“Many of life’s failures are people who did not realize how close they were to success when they gave up.”– Thomas A. Edison`,
         deg:315,
-        bg1:"f7b42c",
+        bg1:"fa9e8c",
         hue:0,
-        bg2:"fc575e",
-        percen:74
+        bg2:"ffe190",
+        percen:45
     },
     {
         id:3,
@@ -32,6 +32,6 @@ export const sliderItems = [
         bg1:"7ee8fa",
         hue:0,
         bg2:"80ff72",
-        percen:74
+        percen:60
     },
 ]

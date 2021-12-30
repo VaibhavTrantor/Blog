@@ -1,11 +1,74 @@
 @import "../style/mixin";
 @import "../style/var";
 .footercontainer{
-    background-color: black;
-    width: 100vw;
-    height: 60px;
-    color: white;
-    @include genralflex(row,center);
-    align-items: center;
+    display: flex;
     font-family: $fontfamily;
+    background-color: #eee;
+}
+.footerleft{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.footercenter{
+    flex:1;
+    padding: 20px;
+}
+.centertitle{
+    margin-bottom: 30px;
+}
+.footerlist{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.footerlistitem{
+    width: 50%;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.footerRight{
+    flex:1;
+    padding: 20px;
+}
+.footercontactItem{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.footerdescription{
+    margin: 20px 0px;
+}
+.footerSocialcontainer{
+    display: flex;
+}
+.footerfacebook{
+    @include iconcontainer(#3B5999)
+}
+.footerInstagram{
+    @include iconcontainer(#E4405F)
+}
+.footerTwitter{
+    @include iconcontainer(#55ACEE)
+}
+.footerPinterest{
+    @include iconcontainer(#E60023)
+}
+.footericon{
+    margin-right: 10px;
+}
+
+@media only screen and (max-width:1136px) {
+    .footercontainer{
+        flex-direction: column;
+    }
+    .footercenter{
+        display: none;
+    }
+    .footerRight{
+        background-color: #eee;
+    }
 }

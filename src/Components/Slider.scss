@@ -1,6 +1,6 @@
 @import '../style/mixin';
 @import '../style/var';
-.container{
+.slidercontainer{
     margin: 0;
     padding: 0;
     width: 100%;
@@ -36,30 +36,35 @@
 .slide{
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include genralflex(row,space-between);
     & img{
         flex:1;
         width: 60%;
         height: 60%;
+        position: relative;
         padding-left: 90px;
+        animation: imagemove 10s 1;
+        transition: .5s ease-in-out;
     }
+}
+@keyframes imagemove{
+    from{top:0}
+    to {top:10%}
 }
 .infocontainerslider{
     flex:1;
     padding: 50px;
     @include genralflex(column,center);
 }
-.title{
+.slidertitle{
     font-size: 60px;
     font-family: $fontfamily;
     color: black;
 }
-.description{
-    margin: 30px 0px;
+.sliderdescription{
+    margin: 20px 0px;
     font-family: $fontfamily;
-    font-size: 30px;
+    font-size: 20px;
     color: black;
     font-weight: 500;
     letter-spacing: 2px;
@@ -67,9 +72,6 @@
 }
 .sliderbtn{
     padding: 10px;
-    font-size: 20px;
-    color: white;
-    font-weight: 600;
     background-color: red;
     cursor: pointer;
     border-radius: 10px;
@@ -81,6 +83,13 @@
         color: white;
         background-color: rgb(214, 43, 43);
         transform: scale(1.1);
+    }
+    & a{
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+        
     }
 }
 
@@ -103,4 +112,14 @@
 }
 .dot.active{
     background: rgb(32,32,32);
+}
+@media only screen and (max-width:1000px) {
+    .slide img{
+        display: none;
+    }
+}
+@media only screen and (max-width:477px) {
+    .slidertitle{
+        font-size: 40px;
+    }
 }

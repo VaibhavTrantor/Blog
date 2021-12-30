@@ -13,8 +13,9 @@ box-sizing: border-box;
     
 }
 nav{
-    background:black;
+    background:white;
     position: fixed;
+    border-bottom: 1px solid lightgrey;
     top: 0;
     height: 70px;
     width: 100%;
@@ -28,7 +29,7 @@ nav{
     }
 }
 .titleblog{
-    color: white;
+    color: black;
     font-size: 32px;
     cursor: pointer;
 }
@@ -36,7 +37,7 @@ nav{
     font-size: 1.6rem;
     padding-right: 20px;
     cursor: pointer;
-    color: white;
+    color: black;
     &:hover{
         color: red;
         transition: .3s ease-in;

@@ -1,0 +1,56 @@
+@import '../style/var';
+@import '../style/mixin';
+.newslettercontainer{
+height: 60vh;
+background-color: #ffe6ec;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+.newstitle{
+    font-size: 70px;
+    margin-bottom: 20px;
+    font-family: $fontfamily;
+}
+.newsdescription{
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: $fontfamily;
+}
+.newsinputcontainer{
+width: 50%;
+height: 40px;
+background-color: white;
+@include flexprops(space-between);
+border: 1px solid lightgray;
+}
+.newsinput{
+border: none;
+flex: 8;
+padding-left: 28px;
+}
+.newsbutton{
+flex: 1;
+border: none;
+height: 40px;
+background-color: teal;
+color: white;
+cursor: pointer;
+transition: .3s ease-in;
+&:hover{
+    background-color: red;
+}
+}
+@media only screen and (max-width:1136px) {
+    .newstitle{
+        font-size: '50px';
+    }
+    .newsdescription{
+        text-align: center;
+    }
+    .newsinputcontainer{
+        width: 80%;
+    }
+}
