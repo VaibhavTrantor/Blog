@@ -65,7 +65,7 @@ const Welcome = () => {
                 </div>
              
                 <Pagedetails handlecardperpage={handlecardperpage} fetchcard={fetchcard} currentpage={currentpage} blogperpage={blogperpage} blogs={Blogs} cardperpage={cardperpage} />
-                <Pagination blogperpage={blogperpage} totalblogs={Blogs.length} paginate={paginate} />
+                <Pagination blogperpage={blogperpage} totalblogs={Blogs.length} currentpage={currentpage} paginate={paginate} />
                <NewsLetter/>
                 <Footer />
             </div>
